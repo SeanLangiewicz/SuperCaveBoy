@@ -34,6 +34,8 @@ vspd = 0;
 player_gravity = 1.5; 
 player_jump = -6;
 jump_speed = -16;
+
+scr_add();
 </string>
           </argument>
         </arguments>
