@@ -35,7 +35,7 @@ player_gravity = 1.5;
 player_jump = -6;
 jump_speed = -16;
 
-scr_add();
+
 </string>
           </argument>
         </arguments>
@@ -108,28 +108,8 @@ hspd = 0;
 }
 
 
+scr_move (Solid);
 
-//Horizontal Collisions
-if(place_meeting(x+hspd,y,Solid))
-{
-while (!place_meeting(x+sign(hspd),y,Solid))
-{
-x += sign (hspd);
-}
-hspd = 0;
-}
-x+= hspd;
-
-// Vertical Collisions
-if(place_meeting(x,y+vspd,Solid))
-{
-while (!place_meeting(x,y+sign(vspd),Solid))
-{
-y += sign (vspd);
-}
-vspd = 0;
-}
-y += vspd;
 </string>
           </argument>
         </arguments>
