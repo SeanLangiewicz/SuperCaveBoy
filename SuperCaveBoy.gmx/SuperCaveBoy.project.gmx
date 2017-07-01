@@ -11,7 +11,7 @@
       <sprite>sprites\spr_player_ledge_grab</sprite>
       <sprite>sprites\spr_player_idle</sprite>
       <sprite>sprites\spr_player_exit</sprite>
-      <sprite>sprites\sp_player_walk</sprite>
+      <sprite>sprites\spr_player_walk</sprite>
       <sprite>sprites\spr_player_jump</sprite>
       <sprite>sprites\spr_player_mask</sprite>
     </sprites>

@@ -10,6 +10,12 @@ if (!place_meeting(x,y+1,Solid))
 {
 vspd += player_gravity;
 
+//Player is in the air
+sprite_index = spr_player_jump;
+image_speed =0;
+image_index = (vspd > 0);
+
+
 // Control Jump Height
 if(up_release && vspd < player_jump)
     {
@@ -18,13 +24,24 @@ if(up_release && vspd < player_jump)
 }
     else
     {
-    vspd =0;
+         vspd =0;
     
-    // Jump code
-    if(up)
-    {
-    vspd = jump_speed;
-    }
+        // Jump code
+        if(up)
+        {
+        vspd = jump_speed;
+        }
+        //Player is on the ground
+        if(hspd == 0)
+        {
+        sprite_index = spr_player_idle;
+        }
+        else
+        {
+        sprite_index = spr_player_walk;
+        image_speed = .6;
+        }
+    
     }
     
 
@@ -76,6 +93,6 @@ while (position_meeting(x+17*image_xscale,y-1,Solid))
 {
 y -=1;
 }
-
+sprite_index = spr_player_ledge_grab;
 state = scr_ledge_grab_state;
 }
