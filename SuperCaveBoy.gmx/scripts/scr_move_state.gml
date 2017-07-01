@@ -47,14 +47,25 @@ if(up_release && vspd < player_jump)
 
 
 // Player Movement
-if(right )
+if(right || left)
+{
+hspd += (right-left) * acc;
+hspd_dir = right - left;
+
+if(hspd > player_speed)
 {
 hspd = player_speed;
 }
 
-if(left)
+if(hspd <  - player_speed)
 {
-hspd =- player_speed;
+hspd = - player_speed;
+}
+
+}
+else
+{
+scr_apply_friction(acc);
 }
 
 // Flip sprite to left / right
@@ -63,11 +74,7 @@ if(hspd !=0)
 image_xscale = sign(hspd);
 }
 
-// Friction
-if(!right && !left)
-{
-hspd = 0;
-}
+
 
 
 scr_move (Solid);

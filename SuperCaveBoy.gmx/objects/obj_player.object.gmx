@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize player object
-player_speed = 5;
+player_speed = 8;
+acc = 2;
 hspd = 0;
 vspd = 0;
 
@@ -34,7 +35,7 @@ vspd = 0;
 player_gravity = 1.5; 
 player_jump = -6;
 jump_speed = -16;
-
+// Default Move state
 state = scr_move_state;
 
 
