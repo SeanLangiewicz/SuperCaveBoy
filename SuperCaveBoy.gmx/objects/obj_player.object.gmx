@@ -35,6 +35,7 @@ player_gravity = 1.5;
 player_jump = -6;
 jump_speed = -16;
 
+state = scr_move_state;
 
 </string>
           </argument>
@@ -58,58 +59,8 @@ jump_speed = -16;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Control the player
-var right = keyboard_check(vk_right);
-var left =keyboard_check(vk_left);
-var up =keyboard_check(vk_up);
-var down =keyboard_check(vk_down);
-var up_release = keyboard_check_released(vk_up);
-
-
-if (!place_meeting(x,y+1,Solid))
-{
-vspd += player_gravity;
-
-// Control Jump Height
-if(up_release &amp;&amp; vspd &lt; player_jump)
-    {
-    vspd = player_jump;
-    }
-}
-    else
-    {
-    vspd =0;
-    
-    // Jump code
-    if(up)
-    {
-    vspd = jump_speed;
-    }
-    }
-    
-
-
-// Player Movement
-if(right )
-{
-hspd = player_speed;
-}
-
-if(left)
-{
-hspd =- player_speed;
-}
-
-
-// Friction
-if(!right &amp;&amp; !left)
-{
-hspd = 0;
-}
-
-
-scr_move (Solid);
-
+            <string>/// Control the player's state
+script_execute(state);
 </string>
           </argument>
         </arguments>
