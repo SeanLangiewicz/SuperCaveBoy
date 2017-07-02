@@ -4,7 +4,17 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_exit</sound>
+    <sound>sound\snd_jump</sound>
+    <sound>sound\snd_ouch</sound>
+    <sound>sound\snd_snake</sound>
+    <sound>sound\snd_spider</sound>
+    <sound>sound\snd_step</sound>
+    <sound>sound\snd_tink</sound>
+    <sound>sound\snd_bat</sound>
+    <sound>sound\snd_music</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player_hurt</sprite>
@@ -47,6 +57,7 @@
       <script>scripts\scr_move_bounce_direction.gml</script>
       <script>scripts\scr_horizontal_move_bounce.gml</script>
       <script>scripts\scr_apply_friction.gml</script>
+      <script>scripts\scr_get_input.gml</script>
     </scripts>
     <scripts name="Player States">
       <script>scripts\scr_move_state.gml</script>
@@ -92,6 +103,9 @@
   <rooms name="rooms">
     <room>rooms\rm_one</room>
     <room>rooms\rm_two</room>
+    <room>rooms\rm_three</room>
+    <room>rooms\rm_four</room>
+    <room>rooms\rm_five</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

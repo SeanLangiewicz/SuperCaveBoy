@@ -1,9 +1,5 @@
 /// Move_state()
-var right = keyboard_check(vk_right);
-var left =keyboard_check(vk_left);
-var up =keyboard_check(vk_up);
-var down =keyboard_check(vk_down);
-var up_release = keyboard_check_released(vk_up);
+
 
 
 if (!place_meeting(x,y+1,Solid))
@@ -20,6 +16,7 @@ image_index = (vspd > 0);
 if(up_release && vspd < player_jump)
     {
     vspd = player_jump;
+    audio_play_sound(snd_jump,5,false)
     }
 }
     else
@@ -74,7 +71,13 @@ if(hspd !=0)
 image_xscale = sign(hspd);
 }
 
-
+//Play the landing sound
+if(place_meeting(x,y+vspd +1,Solid) && vspd >0)
+{
+audio_emitter_pitch(audio_em,random_range(.8,1.2));
+audio_emitter_gain(audio_em,.2);
+audio_play_sound_on(audio_em,snd_step,false,6);
+}
 
 
 scr_move (Solid);
@@ -102,4 +105,9 @@ y -=1;
 }
 sprite_index = spr_player_ledge_grab;
 state = scr_ledge_grab_state;
+
+//Play the ledge grab sound
+audio_emitter_pitch(audio_em,1.5);
+audio_emitter_gain(audio_em,.2);
+audio_play_sound_on(audio_em,snd_step,false,6);
 }

@@ -3,7 +3,7 @@
   <spriteName>spr_player_idle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>spr_player_mask</maskName>
@@ -38,7 +38,11 @@ jump_speed = -16;
 // Default Move state
 state = scr_move_state;
 
+//Get the input
+scr_get_input();
 
+//Create audio emitter
+audio_em = audio_emitter_create();
 
 
 </string>
@@ -64,6 +68,10 @@ state = scr_move_state;
           <argument>
             <kind>1</kind>
             <string>/// Control the player's state
+
+scr_get_input();
+
+// Execute the state
 script_execute(state);
 </string>
           </argument>
@@ -90,10 +98,13 @@ script_execute(state);
             <string>///Go to the next level
 
 
-if(keyboard_check(vk_up))
+if(up)
 {
 y =yprevious;
 state = scr_exit_state;
+audio_stop_sound(snd_jump);
+audio_play_sound(snd_exit,4,false);
+
 }
 </string>
           </argument>
@@ -138,13 +149,20 @@ if(above_enemy &amp;&amp;(falling || state = scr_ledge_grab_state))
     instance_destroy();
     }
     // bounce off the enemy
-    vspd = -(jump_speed /1.5);
+    vspd = -(16 /1.5);
+    audio_play_sound(snd_step,6,false);
     }
 else
 // Take damage
 {
     if(state != scr_hurt_state)
     {
+    
+    audio_emitter_pitch(audio_em,1.6);
+    audio_emitter_gain(audio_em,1.4);
+    audio_play_sound_on(audio_em,snd_ouch,false,8);
+    
+    
     image_blend = make_color_rgb(220,150,150);
     
     vspd = -12
