@@ -70,6 +70,36 @@ script_execute(state);
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_exit">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go to the next level
+
+
+if(keyboard_check(vk_up))
+{
+y =yprevious;
+state = scr_exit_state;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_Enemy_Parent">
       <action>
         <libid>1</libid>
