@@ -7,7 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="Player">
-      <sprite>sprites\spr_player_damage</sprite>
+      <sprite>sprites\spr_player_hurt</sprite>
       <sprite>sprites\spr_player_ledge_grab</sprite>
       <sprite>sprites\spr_player_idle</sprite>
       <sprite>sprites\spr_player_exit</sprite>
@@ -29,12 +29,16 @@
     <sprites name="GUI Icons">
       <sprite>sprites\spr_heart</sprite>
     </sprites>
+    <sprites name="Effects">
+      <sprite>sprites\spr_blood</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Helper Scripts">
       <script>scripts\scr_move.gml</script>
+      <script>scripts\scr_move_bounce_direction.gml</script>
       <script>scripts\scr_horizontal_move_bounce.gml</script>
       <script>scripts\scr_apply_friction.gml</script>
     </scripts>
@@ -70,6 +74,9 @@
       <object>objects\obj_snake</object>
       <object>objects\obj_bat</object>
       <object>objects\obj_spider</object>
+    </objects>
+    <objects name="Effects">
+      <object>objects\obj_blood</object>
     </objects>
   </objects>
   <rooms name="rooms">
