@@ -37,7 +37,9 @@
       <sprite>sprites\spr_blood</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_dirt</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Helper Scripts">
@@ -75,6 +77,7 @@
       <object>objects\Solid</object>
       <object>objects\Dirt</object>
       <object>objects\obj_exit</object>
+      <object>objects\obj_Background</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_Enemy_Parent</object>

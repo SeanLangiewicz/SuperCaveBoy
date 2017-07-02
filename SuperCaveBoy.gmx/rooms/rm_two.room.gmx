@@ -187,6 +187,7 @@
     <instance objName="Dirt" x="288" y="80" name="inst_AE36425B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_entrance" x="64" y="240" name="inst_884D0B5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_exit" x="560" y="48" name="inst_FDA95297" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bat" x="368" y="144" name="inst_4F2989A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
